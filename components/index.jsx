@@ -42,7 +42,7 @@ const Upload = ({ dataList }) => {
 
     unix = parseInt(unix);
     const date = new Date(unix);
-    return date.toLocaleString();
+    return date.toLocaleString("id-ID");
   };
 
   // sort dataList
