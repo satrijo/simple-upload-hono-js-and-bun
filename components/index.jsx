@@ -72,7 +72,7 @@ const Upload = ({ dataList }) => {
                   >
                     <img src={item} key={index} />
                     <p>
-                      <b>File di Upload </b>{" "}
+                      <b>File uploaded: </b>{" "}
                       {dateTime(item.split("/").pop().split(".")[0])}
                     </p>
                   </a>

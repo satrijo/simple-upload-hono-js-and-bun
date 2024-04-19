@@ -4,12 +4,10 @@ import { serveStatic } from 'hono/bun'
 import { basicAuth } from 'hono/basic-auth'
 import { Glob } from "bun";
 
-const glob = new Glob("**/*.{jpg,jpeg,png,gif,webp,svg}", { cwd: "src/public/images/" });
-
 const app = new Hono()
+const glob = new Glob("**/*.{jpg,jpeg,png,gif,webp,svg}");
 
 app.use('*', basicAuth({ username: 'aljabar', password: 'ci1994@' }))
-
 app.use('/public/*', serveStatic({ root: './' }))
 
 app.get('/', async (c) => {
@@ -43,7 +41,6 @@ app.post('/upload', async (c) => {
       let data = Buffer.from(arrayBuffer)
       const path = 'public/images/'
       const save = path + randomId + '.jpeg'
-      // const save = path + randomId + '.' + body.image.type.split('/')[1]
       Bun.write(save, data)
       return c.redirect('/')
     } else {
