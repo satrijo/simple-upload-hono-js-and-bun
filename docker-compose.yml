@@ -1,0 +1,10 @@
+version: "1.0"
+services:
+  upload:
+    image: upload:1.0.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 1994:1994
+    restart: always
