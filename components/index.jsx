@@ -69,6 +69,7 @@ const Upload = ({ dataList }) => {
                     key={index}
                     target="_blank"
                     rel="noopener noreferrer"
+                    download={item}
                   >
                     <img src={item} key={index} />
                     <p>
